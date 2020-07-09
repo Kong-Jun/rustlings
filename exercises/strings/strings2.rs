@@ -2,11 +2,13 @@
 // Make me compile without changing the function signature!
 // Execute `rustlings hint strings2` for hints :)
 
-// I AM NOT DONE
 
 fn main() {
     let word = String::from("green"); // Try not changing this line :)
-    if is_a_color_word(word) {
+    // is_a_color_word() 的参数是 &str，需要使用
+    // &String，在传递给函数时会发生解引用强制转换变成&str
+    // if is_a_color_word(word) {
+    if is_a_color_word(&word) {
         println!("That is a color word I know!");
     } else {
         println!("That is not a color word I know.");

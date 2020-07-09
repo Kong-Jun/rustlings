@@ -7,10 +7,16 @@
 // more than 40 at once, each apple only costs 1! Write a function that calculates
 // the price of an order of apples given the order amount. No hints this time!
 
-// I AM NOT DONE
 
-// Put your function here!
-// fn ..... {
+#![feature(half_open_range_patterns)]
+#![feature(exclusive_range_pattern)]
+fn calculate_apple_price(number: i32) -> i32 {
+    match number {
+        ..0   => panic!("别瞎输入数量"),
+        0..40 => 2 * number,
+        40..  => number,
+    }
+}
 
 // Don't modify this function!
 #[test]
