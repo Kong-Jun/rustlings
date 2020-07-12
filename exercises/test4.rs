@@ -7,7 +7,7 @@
 #[macro_export]
 macro_rules! my_macro {
     ($val: expr) => {
-        "Hello $val"
+        format!("Hello {}", $val);
     };
 }
 
